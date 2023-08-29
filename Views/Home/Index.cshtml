@@ -1,0 +1,65 @@
+﻿@model List<Patient>
+
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> @ResGeneral.lblPatientTable </h3>
+                <nav aria-label="breadcrumb">
+
+                </nav>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <a type="button" class="btn btn-success" asp-controller="Home" asp-action="Edit">@ResGeneral.lblAdd</a>
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>@ResGeneral.lblNumber</th>
+                                        <th>@ResGeneral.lblPatientName</th>
+                                        <th>@ResGeneral.lblMobileNumber</th>
+                                        <th>@ResGeneral.lblAction</th>
+                                   
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@(i + 1)</td>
+                                       
+                                            <td>@Model[i].Name</td>
+                                            <td>@Model[i].MobileNumber</td>
+
+                                            <td>
+                                                <a type="button" class="btn btn-success" asp-controller="Home" asp-action="Edit" asp-route-id="@Model[i].Id">@ResGeneral.lblEdit</a>
+                                                <a type="button" class="btn btn-danger" asp-controller="Home" asp-action="Delete1" asp-route-id="@Model[i].Id">@ResGeneral.lblDelete</a>
+
+                                            </td>
+
+                                        </tr>
+
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script src="~/Admin/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/Admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="~/Admin/assets/js/data-table.js"></script>
+
+
+  }

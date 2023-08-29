@@ -1,0 +1,38 @@
+﻿
+
+@model Patient
+
+<div class="card">
+
+    <div class="row">
+        <div class="col-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@ResGeneral.lblPatientInformation</h4>
+                    <p class="card-description"> @ResGeneral.lblPatientDetails </p>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Save" role="form">
+
+                 
+                      
+                        <div class="form-group">
+                            <label for="exampleInputName1">@ResGeneral.lblPatientName</label>
+                            <input asp-for="Name" type="text" class="form-control" id="exampleInputName1" placeholder="@ResGeneral.lblPatientName">
+                        </div>
+                  
+                            <div class="form-group">
+                            <label for="exampleInputName1">@ResGeneral.lblMobileNumber</label>
+                            <input asp-for="MobileNumber" type="text" class="form-control" id="exampleInputName1" placeholder="@ResGeneral.lblMobileNumber">
+                        </div>
+
+
+
+                        <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">Submit</button>
+                        <button class="btn btn-dark">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
